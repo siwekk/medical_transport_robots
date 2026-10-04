@@ -1,0 +1,9 @@
+Prepared simulation input and data attribution
+
+The Freiburg request profiles and pathway network originate from A. Hess and D. Stampa, Healthcare Logistics Dataset: GraphML Pathway Network and Transport Requests (University Medical Center Freiburg), Zenodo, 2026. DOI: https://doi.org/10.5281/zenodo.19085901
+
+The source count mix uses aggregate event counts from the MIMIC-IV Clinical Database Demo, version 2.2, DOI: https://doi.org/10.13026/dp1f-ex47, and MIMIC-IV-ED Demo, version 2.2, DOI: https://doi.org/10.13026/jzz5-vs76. Clinical events are not observed transport trips. No patient records from those releases are bundled.
+
+combined_parameters.json is the exact prepared input used for the reported simulations. Its SHA256 is recorded in PACKAGE_MANIFEST.json and the original experiment manifests. The raw Freiburg downloads and data preparation programs are omitted because simulation reruns consume this prepared input directly. Regeneration of the prepared input from source releases is outside this compact package.
+
+The MIT license applies to the software. Source data and their derived representations remain subject to the terms of the cited releases. This package does not relicense those data. Consult each DOI landing page for its data license and attribution requirements.

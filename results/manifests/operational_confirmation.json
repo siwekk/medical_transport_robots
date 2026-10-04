@@ -1,0 +1,10 @@
+{
+  "created_at": "2026-10-02T16:17:21.115103+00:00",
+  "phase": "confirmation",
+  "replications": 1080,
+  "scenario_count": 36,
+  "source_sha256": "13031a92d92fabc2fe6b797dddbb4d7de645ca9b85d3db726125589796e0b343",
+  "design_sha256": "abcef4802e895326c0845efe6a18c91630adf4395741d5de865b2824090f59c8",
+  "parameters_sha256": "879e029ec80091c702e8059892c2ab4d380bc8f2aeba61889019cf2b61d4e280",
+  "raw_sha256": "89399379f70e62c3a8c3937ae556c40ade4f40811dbf8952ce066f98ba675205"
+}

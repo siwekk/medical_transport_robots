@@ -1,0 +1,95 @@
+model:
+  name: mimic_demo_reference_hospital
+  version: 0.1.0
+  beds: 200
+  warmup_days: 7
+  simulation_days: 30
+  base_requests_per_hour: 8.0
+  usable_block_minutes: 10.0
+
+hospital:
+  elevator_cycle_minutes: 2.2
+  elevator_travel_per_floor_minutes: 0.25
+  congestion_sigma: 0.18
+  human_speed_m_per_min: 72.0
+  robot_speed_m_per_min: 54.0
+  human_transporters: 5
+  human_staffing:
+    - {name: night, start_hour: 22, end_hour: 6, count: 2}
+    - {name: day, start_hour: 6, end_hour: 14, count: 5}
+    - {name: evening, start_hour: 14, end_hour: 22, count: 3}
+  nodes:
+    pharmacy: {floor: 1}
+    laboratory: {floor: 1}
+    central_supply: {floor: 0}
+    sterile_processing: {floor: 0}
+    emergency: {floor: 1}
+    icu: {floor: 2}
+    operating_suite: {floor: 2}
+    medical_ward: {floor: 3}
+    surgical_ward: {floor: 3}
+    elevator_f0: {floor: 0}
+    elevator_f1: {floor: 1}
+    elevator_f2: {floor: 2}
+    elevator_f3: {floor: 3}
+    charging: {floor: 1}
+  edges:
+    - [central_supply, elevator_f0, 75]
+    - [sterile_processing, elevator_f0, 60]
+    - [pharmacy, elevator_f1, 45]
+    - [laboratory, elevator_f1, 55]
+    - [emergency, elevator_f1, 70]
+    - [charging, elevator_f1, 20]
+    - [icu, elevator_f2, 50]
+    - [operating_suite, elevator_f2, 65]
+    - [medical_ward, elevator_f3, 80]
+    - [surgical_ward, elevator_f3, 85]
+    - [elevator_f0, elevator_f1, 1]
+    - [elevator_f1, elevator_f2, 1]
+    - [elevator_f2, elevator_f3, 1]
+
+tasks:
+  medication:
+    origin: pharmacy
+    destinations: [emergency, icu, medical_ward, surgical_ward]
+    deadline_minutes: 35
+    priority: 2
+    loading_minutes: 1.4
+    receiving_minutes: 1.0
+  specimen:
+    origins: [emergency, icu, medical_ward, surgical_ward, operating_suite]
+    destination: laboratory
+    deadline_minutes: 25
+    priority: 1
+    loading_minutes: 1.0
+    receiving_minutes: 0.8
+  supply:
+    origin: central_supply
+    destinations: [emergency, icu, medical_ward, surgical_ward, operating_suite]
+    deadline_minutes: 120
+    priority: 4
+    loading_minutes: 2.0
+    receiving_minutes: 1.5
+  instrument:
+    origin: sterile_processing
+    destinations: [operating_suite]
+    deadline_minutes: 45
+    priority: 2
+    loading_minutes: 2.5
+    receiving_minutes: 1.5
+
+robots:
+  fleet_size: 2
+  reliability: 0.98
+  failure_recovery_minutes_mean: 12.0
+  coordination_minutes_mean: 2.0
+  capacity: 1
+  human_queue_threshold: 1
+
+experiment:
+  policies: [human_only, robot_first, priority_hybrid]
+  fleet_sizes: [0, 1, 2, 4]
+  demand_multipliers: [0.75, 1.0, 1.5]
+  reliabilities: [0.95, 0.98, 0.995]
+  replications: 30
+  seed: 20260920

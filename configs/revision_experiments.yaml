@@ -1,0 +1,61 @@
+base_config: hospital_freiburg_calibrated.yaml
+
+experiment:
+  seed: 20261201
+  primary_replications: 30
+  sensitivity_replications: 20
+  convergence_replications: 15
+  repositioning_replications: 10
+
+human_staffing:
+  - {name: night, start_hour: 22, end_hour: 6, count: 2}
+  - {name: day, start_hour: 6, end_hour: 14, count: 8}
+  - {name: evening, start_hour: 14, end_hour: 22, count: 7}
+
+hospital_operations:
+  explicit_elevator_contention: true
+  elevator_bank_capacity: 2
+  passenger_elevator_arrivals_per_hour: 0.0
+  passenger_elevator_service_minutes: 2.2
+  repositioning_enabled: false
+  human_initial_node: "2624"
+
+robot_operations:
+  battery_enabled: true
+  battery_capacity_kwh: 4.0
+  energy_kwh_per_active_minute: 0.025
+  charge_trigger_fraction: 0.25
+  charging_station_count: 2
+  charging_power_kw: 2.0
+  charging_efficiency: 0.90
+  enforce_battery_feasibility: true
+  initial_node: "2624"
+  repositioning_enabled: false
+  infection_control_enabled: true
+  decontamination_task_types: [specimen, instrument]
+  decontamination_compliance: 1.0
+  decontamination_minutes: 7.0
+  decontamination_human_minutes: 2.0
+  decontamination_station_count: 2
+  schedule_human_support: true
+  adaptive_robot_reserve: 1
+  adaptive_human_pressure: 0.25
+  adaptive_support_pressure: 1.0
+  adaptive_elevator_inflation: 0.15
+
+task_scenarios:
+  source_mix:
+    instrument: 0.0005306116079092342
+    medication: 0.14957785164723691
+    specimen: 0.8406058336064423
+    supply: 0.0092857031384116
+  balanced_mix:
+    instrument: 0.10
+    medication: 0.30
+    specimen: 0.40
+    supply: 0.20
+  mixed_priority:
+    instrument: {"1": 0.15, "2": 0.65, "3": 0.20}
+    medication: {"1": 0.10, "2": 0.60, "3": 0.30}
+    specimen: {"1": 0.25, "2": 0.50, "3": 0.25}
+    supply: {"2": 0.10, "3": 0.40, "4": 0.50}

@@ -1,0 +1,34 @@
+base_config: hospital_freiburg_calibrated.yaml
+robot_operations_config: revision_experiments.yaml
+
+experiment:
+  screening_seed: 20261020
+  confirmation_seed: 20261120
+  screening_replications: 5
+  confirmation_replications: 30
+  screening_warmup_days: 7
+  screening_measurement_days: 7
+  confirmation_warmup_days: 7
+  confirmation_measurement_days: 30
+
+staffing:
+  - {name: moderate, night: 8, day: 30, evening: 24}
+  - {name: high, night: 15, day: 60, evening: 50}
+
+specimen_deadlines_minutes: [25]
+task_mixes: [source]
+policies:
+  - {name: human_only, fleet: 0}
+
+hospital_operations:
+  explicit_elevator_contention: true
+  elevator_bank_capacity: 4
+  passenger_elevator_arrivals_per_hour: 0.0
+  repositioning_enabled: true
+  location_aware_assignment: true
+  human_initial_node: "2624"
+
+robot_operations:
+  repositioning_enabled: true
+  location_aware_assignment: true
+  initial_node: "2624"

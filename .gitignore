@@ -1,0 +1,13 @@
+__pycache__/
+*.py[cod]
+.venv/
+*.egg-info/
+.pytest_cache/
+.coverage
+results/tables/
+results/archive/
+results/manifests/reconciled_benchmark_analysis.json
+manuscript/
+.cache/
+results/raw/operational_smoke_runs.csv
+results/manifests/operational_smoke.json

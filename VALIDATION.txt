@@ -1,0 +1,9 @@
+Package validation, October 2, 2026
+
+Python 3.12.14 on Windows. Dependency versions are recorded in requirements-tested.txt.
+
+The complete analysis pipeline regenerated ten CSV tables matching the manuscript workspace references with relative and absolute tolerance 1e-10. Three PDF figures and their LaTeX table fragments were regenerated. The 18 included simulation and routing tests passed.
+
+One independent confirmation replication was executed through the process pool using two workers. All numeric fields matched its saved reference row at relative and absolute tolerance 1e-10. Conservation and battery checks in the benchmark analysis passed for the saved runs.
+
+All packaged file hashes were verified. A fresh extraction of the ZIP was verified separately. The entire 2,460 replication simulation study was not rerun while constructing this package. Those raw outputs are the retained study results. The simulate command is provided for a complete rerun.

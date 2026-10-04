@@ -1,0 +1,24 @@
+{
+  "created_at": "2026-10-02T18:03:45.565092+00:00",
+  "status": "exploratory",
+  "replications": 120,
+  "scenario_count": 4,
+  "seeds": [
+    20261120,
+    20261149
+  ],
+  "warmup_days": 7,
+  "measurement_days": 30,
+  "clearance_days": 1,
+  "inputs_sha256": {
+    "results/raw/operational_confirmation_runs.csv": "89399379f70e62c3a8c3937ae556c40ade4f40811dbf8952ce066f98ba675205",
+    "results/raw/operational_confirmation_elev4_full_runs.csv": "0974c2c93af21e44ef47581f75f896b724934b09a73073aec0d6cc74e0fb3823",
+    "configs/operational_study.yaml": "abcef4802e895326c0845efe6a18c91630adf4395741d5de865b2824090f59c8",
+    "configs/operational_study_elev4.yaml": "46ce258361363da1bcb8b6517f589cddb7a921c68a8e4258764c65a9c386b2e3",
+    "src/hospital_sim/simulation.py": "13031a92d92fabc2fe6b797dddbb4d7de645ca9b85d3db726125589796e0b343",
+    "src/hospital_sim/routing.py": "dd052f566e26573c7708f130245f0c6b82c4d50d9c72ce62416ab920aed03606",
+    "data/processed/combined_parameters.json": "879e029ec80091c702e8059892c2ab4d380bc8f2aeba61889019cf2b61d4e280",
+    "scripts/run_reconciled_benchmark.py": "c72a718c2b1f54573feb7fb94d7626832e7788d3a10309b4986e4b3522c5cba0"
+  },
+  "raw_sha256": "acf83dd2044dc79a76f8e86974ceeea6059667994027d615c2a1d6c6115fa303"
+}
