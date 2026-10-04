@@ -1,6 +1,11 @@
 Hospital delivery robot dispatch: reproduction package
 
-This compact repository reproduces the numerical comparisons in "A State Based Dispatch Controller for Hospital Delivery Robots with Shared Human and Infrastructure Resources" by Krzysztof Siwek and Aleksandra Œwietlicka. It retains pickup travel, human support, and the shared elevator, charging, and cleaning model. It contains only the required simulator modules, experiment designs, analysis programs, prepared input, saved confirmation outputs, and two focused test files. It excludes the article sources, earlier experiments, raw source downloads, and temporary files.
+This compact repository reproduces the numerical comparisons in 
+
+    **A State Based Dispatch Controller for Hospital Delivery Robots with Shared Human and Infrastructure Resources**
+	by Krzysztof Siwek and Aleksandra &Sacute;wietlicka
+
+It retains pickup travel, human support, and the shared elevator, charging, and cleaning model. It contains only the required simulator modules, experiment designs, analysis programs, prepared input, saved confirmation outputs, and two focused test files. It excludes the article sources, earlier experiments, raw source downloads, and temporary files.
 
 Use Python 3.12 or later. This package was checked with Python 3.12.14. Run commands from this directory. Create and activate a virtual environment, then install the package with:
 
